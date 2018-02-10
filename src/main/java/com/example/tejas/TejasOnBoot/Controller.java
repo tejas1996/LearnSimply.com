@@ -4,14 +4,17 @@ package com.example.tejas.TejasOnBoot;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+import java.util.Map;
+
+@org.springframework.stereotype.Controller
 public class Controller {
 
     @RequestMapping("/home")
-    public String greetings(){
-
+    public String greetings(Map<String, Object> model) {
+        model.put("message", "hey there");
+        model.put("another", "hello again");
         System.out.println("hey greet");
-        return "Hey this is just a demo spring boot layout and trust me we are gonna add a lot of things in here";
+        return "Hello";
     }
 
 }
