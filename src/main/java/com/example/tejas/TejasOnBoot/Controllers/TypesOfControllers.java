@@ -2,21 +2,23 @@ package com.example.tejas.TejasOnBoot.Controllers;
 
 import com.example.tejas.TejasOnBoot.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
 
+@Controller
 public class TypesOfControllers {
 
     @Autowired
     StudentService studentService;
 
     // just a normal controller to handle get requests
-    @RequestMapping("/home")
-    public HashMap<String, String> greetings(Map<String, Object> model) {
-        return studentService.getStudents();
+    @GetMapping("/home")
+    public String greetings(Map<String, Object> model) {
+        model.put("message", "Hello Sev");
+        return "Hello";
     }
 
     // Controllers with a path variable
