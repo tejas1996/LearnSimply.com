@@ -26,6 +26,14 @@ public class TypesOfControllers {
         return "Hello";
     }
 
+    @GetMapping("/home/addArticle")
+    public String addArticle(Map<String, Object> model) {
+        return "AddArticle";
+    }
+
+
+
+
     // Controllers with a path variable
     // In this type we use a {} to define a variable and use the anotation called path variable
 
