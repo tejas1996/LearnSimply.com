@@ -17,12 +17,15 @@
 
     <div id="hey">
         <h1>BuzzOverIT</h1>
+        <h2>Here are all our articles</h2>
+
         <h2>
-            <span id="spa" th:text="'Message: ' + ${message}"></span>
+            <span id="spa" th:text="'Articles: ' + ${message}"></span>
         </h2>
+
         <button type="button"
-                onclick="document.getElementById('demo').innerHTML = Date()">
-            Click me to display Date and Time.
+                onclick="addArticleload()">
+            Also you can add article
         </button>
 
         <p id="demo"></p>
@@ -34,6 +37,8 @@
 
 <script type="text/javascript"
         src="../../js/main.js"></script>
+<script type="text/javascript"
+        src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 
 </body>
 </html>

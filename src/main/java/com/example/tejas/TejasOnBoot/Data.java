@@ -11,6 +11,7 @@ public class Data {
 
     public void add(String key, String value) {
         demoTemp.put(key, value);
+        System.out.println(demoTemp);
     }
 
     public String getArticle(String key) {
