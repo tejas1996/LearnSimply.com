@@ -30,6 +30,36 @@ function subdoc() {
 
 }
 
+
+function openDoc() {
+
+     $.ajax({
+            type: "POST",
+            contentType: "application/json",
+            url: "/home/getArticle/" + "tejas",
+            dataType: 'json',
+            timeout: 600000,
+            complete: function (answer) {
+                var he = answer
+                console.log("success")
+                document.getElementById("ans").innerHTML = he.responseText;
+            },
+            error: function (e) {
+                console.log(e)
+
+            }
+        });
+
+
+
+
+
+}
+
+
+
+
+
 function addArticleload(){
 
     window.location = '/home/addArticle'
