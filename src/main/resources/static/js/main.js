@@ -1,17 +1,18 @@
 var sd = document.getElementById("hey")
 function subdoc() {
 
-    var key = document.getElementById("key").value;
-    var value = document.getElementById("value").value;
+    var articletitle = document.getElementById("Articletitle").value;
+    var imageLink = document.getElementById("imageLink").value;
+    var content = document.getElementById("content").value;
+    var videoLink = document.getElementById("videoLink").value;
 
-  console.log("here is key "+key)
-  console.log("and the value is"+value)
-    var search = key + "="+value
+    var jsonOb = convertToJson(articletitle,imageLink,content,videoLink);
+    console.log("josn is:  "+jsonOb);
 
      $.ajax({
-            type: "GET",
+            type: "POST",
             contentType: "application/json",
-            url: "/home/add/" + search,
+            url: "/home/add/"+jsonOb,
             dataType: 'json',
             timeout: 600000,
             success: function () {
@@ -25,10 +26,17 @@ function subdoc() {
             }
         });
 
-    window.location = '/home'
 
 
 }
+
+
+function convertToJson(a,b,c,d){
+var json = "{ \"articletitle\":\""+a+"\",\"imageLink\":\""+b+"\",\"content\":\""+c+"\",\"videoLink\":\""+d+"\"} ";
+return json;
+
+}
+
 
 
 function openDoc() {

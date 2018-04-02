@@ -1,12 +1,16 @@
 package com.example.tejas.TejasOnBoot.Controllers;
 
 import com.example.tejas.TejasOnBoot.Data;
+import com.example.tejas.TejasOnBoot.model.JsonArticle;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
 import java.util.Date;
 import java.util.HashMap;
 
@@ -19,12 +23,14 @@ public class AddController {
     Data database;
 
 
-    @RequestMapping("/home/add/{id}")
-    public String addArticle(@PathVariable String id) {
+    @RequestMapping(value = "/home/add/{jsonObject}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public String addArticle(@PathVariable String jsonObject) throws IOException {
 
-        String key = id.substring(0, id.indexOf("="));
-        String dat = id.substring(id.indexOf("=") + 1, id.length());
-        database.add(key, dat);
+        System.out.println(jsonObject);
+        ObjectMapper ob = new ObjectMapper();
+        JsonArticle ar = ob.readValue(jsonObject, JsonArticle.class);
+
+
         return "Added the article";
 
     }
