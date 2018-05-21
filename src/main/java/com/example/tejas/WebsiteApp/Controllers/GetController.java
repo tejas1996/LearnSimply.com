@@ -1,6 +1,6 @@
-package com.example.tejas.TejasOnBoot.Controllers;
+package com.example.tejas.WebsiteApp.Controllers;
 
-import com.example.tejas.TejasOnBoot.Data;
+import com.example.tejas.WebsiteApp.Data;
 import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;

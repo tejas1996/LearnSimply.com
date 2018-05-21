@@ -1,4 +1,4 @@
-package com.example.tejas.TejasOnBoot;
+package com.example.tejas.WebsiteApp;
 
 import org.springframework.stereotype.Service;
 

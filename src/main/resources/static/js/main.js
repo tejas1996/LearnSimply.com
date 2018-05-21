@@ -1,12 +1,13 @@
 var sd = document.getElementById("hey")
 function subdoc() {
 
+	var articleId = document.getElementById("Articleid").value;
     var articletitle = document.getElementById("Articletitle").value;
     var imageLink = document.getElementById("imageLink").value;
     var content = document.getElementById("content").value;
     var videoLink = document.getElementById("videoLink").value;
 
-    var jsonOb = convertToJson(articletitle,imageLink,content,videoLink);
+    var jsonOb = convertToJson(articleId,articletitle,imageLink,content,videoLink);
     console.log("josn is:  "+jsonOb);
 
      $.ajax({
@@ -31,8 +32,8 @@ function subdoc() {
 }
 
 
-function convertToJson(a,b,c,d){
-var json = "{ \"articletitle\":\""+a+"\",\"imageLink\":\""+b+"\",\"content\":\""+c+"\",\"videoLink\":\""+d+"\"} ";
+function convertToJson(o,a,b,c,d){
+var json = "{ \"articleId\":\""+o+"\",\"articletitle\":\""+a+"\",\"imageLink\":\""+b+"\",\"content\":\""+c+"\",\"videoLink\":\""+d+"\"} ";
 return json;
 
 }

@@ -1,7 +1,7 @@
-package com.example.tejas.TejasOnBoot.Controllers;
+package com.example.tejas.WebsiteApp.Controllers;
 
-import com.example.tejas.TejasOnBoot.Data;
-import com.example.tejas.TejasOnBoot.StudentService;
+import com.example.tejas.WebsiteApp.Data;
+import com.example.tejas.WebsiteApp.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
